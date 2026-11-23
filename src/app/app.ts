@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
-  imports: [RouterOutlet],
+  // Tout ce dont j'ai besoin dans la vue
+  imports: [],
+  // Comment appeler mon composant
   selector: 'app-root',
+  // mon css
   styleUrl: './app.css',
+  // mon fichier html (ma vue)
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('ngAinos231126');
 }
