@@ -1,7 +1,7 @@
 <ol class="list list-group">
   @for (cv of cvs(); track cv.id) {
-    <li class="list list-group list-group-item">
-      <app-cv-item [cv]="cv" />
+    <li  class="list list-group list-group-item">
+      <app-cv-item (selectCv)="forwardCv.emit($event)" [cv]="cv" />
     </li>
   }
 </ol>
