@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { First } from './components/first/first';
+import { Second } from './components/second/second';
+import { Color } from './components/color/color';
 
 @Component({
   // Tout ce dont j'ai besoin dans la vue
-  imports: [],
+  imports: [First, Second, Color],
   // Comment appeler mon composant
   selector: 'app-root',
   // mon css
