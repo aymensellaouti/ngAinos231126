@@ -1,0 +1,8 @@
+<p
+  (click)="isOn.update((old) =>!old)"
+  [class]="{
+    'on': isOn(),
+    'off': !isOn(),
+  }"
+>
+ng-class-example works!</p>
