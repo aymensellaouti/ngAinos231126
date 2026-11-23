@@ -3,7 +3,7 @@
   (change)="changeColor(colorInput)"
   type="text"
   class="form-control">
-<div [style.backgroundColor]="bgc">color works!</div>
+<div [style.backgroundColor]="bgc()">color works!</div>
 <button (click)="reset()"  class="btn btn-danger">
   reset
 </button>

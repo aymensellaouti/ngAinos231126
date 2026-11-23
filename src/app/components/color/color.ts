@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -8,14 +8,19 @@ import { Component } from '@angular/core';
 })
 export class Color {
   defaultColor = 'red';
-  bgc = this.defaultColor;
+  bgc = signal(this.defaultColor);
 
+  constructor() {
+    setTimeout(() => {
+      this.bgc.set('yellow');
+    },2000)
+  }
   changeColor(newColorInput: HTMLInputElement) {
-    this.bgc = newColorInput.value;
+    this.bgc.set(newColorInput.value);
     newColorInput.value = ''
   }
 
   reset() {
-    this.bgc = this.defaultColor;
+    this.bgc.set(this.defaultColor);
   }
 }
