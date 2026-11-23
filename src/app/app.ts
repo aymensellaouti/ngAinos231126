@@ -4,10 +4,12 @@ import { Second } from './components/second/second';
 import { Color } from './components/color/color';
 import { Som } from './components/som/som';
 import { TtcComponent } from './signals/ttc/ttc.component';
+import { Pere } from './interactionInterComposants/pere/pere';
+import { CvPage } from './cv/cv-page/cv-page';
 
 @Component({
   // Tout ce dont j'ai besoin dans la vue
-  imports: [First, Second, Color, Som, TtcComponent],
+  imports: [First, Second, Color, Som, TtcComponent, Pere, CvPage],
   // Comment appeler mon composant
   selector: 'app-root',
   // mon css
