@@ -11,5 +11,4 @@ import { CvItem } from '../cv-item/cv-item';
 export class CvList {
   cvs = input<Cv[]>([]);
 
-  forwardCv = output<Cv>()
 }

@@ -1,4 +1,4 @@
-import {  Injectable } from '@angular/core';
+import {  Injectable, Signal, signal } from '@angular/core';
 import { Cv } from '../model/cv';
 
 
@@ -7,17 +7,28 @@ import { Cv } from '../model/cv';
   providedIn: 'root',
 })
 export class CvService {
-  #cvs = [
+  #cvs = signal([
+    new Cv(1, 'sellaouti', 'aymen', 'teacher', '12324', '', 44),
+    new Cv(2, 'sellaouti', 'skander', 'enfant', '12324', '       ', 8),
+    new Cv(3, 'Hever', 'Laurent', 'Computer Science', '4444', 'rotating_card_profile3.png',41),
+  ]);
 
-  ];
-
+  #selectedCv =signal<Cv|null>(null);
 
   /**
    * Retourne la liste des cvs
    * @returns Cv[]
    */
-  getCvs(): Cv[] {
-    return [];
+  getCvs(): Signal<Cv[]> {
+    return this.#cvs.asReadonly();
+  }
+
+  getSelectedCv() {
+    return this.#selectedCv.asReadonly();
+  }
+
+  selectCv(cv: Cv) {
+    this.#selectedCv.set(cv);
   }
 
   /**
