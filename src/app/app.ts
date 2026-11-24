@@ -10,10 +10,12 @@ import { NgStyleExample } from './directives/ng-style-example/ng-style-example';
 import { NgClassExample } from './directives/ng-class-example/ng-class-example';
 import { TodoComponent } from './todo/todo/todo.component';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
+import { RouterOutlet } from '@angular/router';
+import { Navbar } from './components/navbar/navbar';
 
 @Component({
   // Tout ce dont j'ai besoin dans la vue
-  imports: [First, Second, Color, Som, TtcComponent, Pere, CvPage, NgStyleExample, NgClassExample, TodoComponent, WeekTodoComponent],
+  imports: [First, Second, Color, Som, TtcComponent, Pere, CvPage, NgStyleExample, NgClassExample, TodoComponent, WeekTodoComponent, RouterOutlet, Navbar],
   // Comment appeler mon composant
   selector: 'app-root',
   // mon css
