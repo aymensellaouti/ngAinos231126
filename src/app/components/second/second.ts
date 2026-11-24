@@ -1,4 +1,4 @@
-import { Component, inject, input, signal, ViewEncapsulation } from '@angular/core';
+import { Component, effect, inject, input, signal, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { APP_ROUTES } from '../../config/routes.config';
 
@@ -20,12 +20,18 @@ export class Second {
   router = inject(Router);
   name = input('');
 
-  blacklist = input(['aymen']);
-  constructor() {
-    // const name = this.acr.snapshot.params['name'];
-    // if (this.blacklist().includes(name)) {
-    //   this.router.navigate([APP_ROUTES.home])
-    // }
-    // this.name.set(name);
-  }
+  blacklist = signal(['aymen']);
+  redirectEffect = effect(() => {
+    const blacklist = this.blacklist();
+    if (blacklist && blacklist.includes(this.name())) {
+      this.router.navigate([APP_ROUTES.home]);
+    }
+  })
+  // constructor() {
+  //   // const name = this.acr.snapshot.params['name'];
+  //   // if (this.blacklist().includes(name)) {
+  //   //   this.router.navigate([APP_ROUTES.home])
+  //   // }
+  //   // this.name.set(name);
+  // }
 }
