@@ -7,7 +7,8 @@ import { FormsModule } from "@angular/forms";
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
-  imports: [FormsModule]
+  imports: [FormsModule],
+  providers: [TodoService]
 })
 export class TodoComponent {
   todoService = inject(TodoService);
@@ -17,6 +18,7 @@ export class TodoComponent {
   addTodo() {
     this.todoService.addTodo(this.todo());
     this.todo.set(new Todo());
+    this.todoService.logTodos();
   }
 
   deleteTodo(todo: Todo) {

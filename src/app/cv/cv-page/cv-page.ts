@@ -11,7 +11,7 @@ import { SayHello } from '../../services/sayHello.service';
   imports: [CvList, CvCard, DatePipe, UpperCasePipe, Btc2UsdPipe, CurrencyPipe],
   selector: 'app-cv-page',
   styleUrl: './cv-page.css',
-  templateUrl: './cv-page.html',
+  templateUrl: './cv-page.html'
 })
 export class CvPage {
   today = new Date();
