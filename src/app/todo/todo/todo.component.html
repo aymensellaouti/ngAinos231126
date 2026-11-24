@@ -10,14 +10,16 @@
     </ol>
   </div>
   <div class="col">
+    <form [formRoot]="todoForm">
     name:
-    <input [(ngModel)]="todo().name" type="text" class="form-control" /> content:
-    <input [(ngModel)]="todo().content" type="text" class="form-control" />
+    <input [formField]="todoForm.name" type="text" class="form-control" /> content:
+    <input [formField]="todoForm.content" type="text" class="form-control" />
     <button
       (click)="addTodo()"
-      [disabled]="!todo().name.trim() || !todo().content.trim()"
+      [disabled]="todoForm().invalid()"
       class="btn btn-primary m-2">
       add
     </button>
+    </form>
   </div>
 </div>
