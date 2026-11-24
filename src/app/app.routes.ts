@@ -7,6 +7,7 @@ import { CvPage } from './cv/cv-page/cv-page';
 import { Second } from './components/second/second';
 import { Nf404 } from './components/nf404/nf404';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
+import { Login } from './auth/login/login';
 
 export const routes: Routes = [
   {path: '', component: First},
@@ -14,6 +15,7 @@ export const routes: Routes = [
   {path: 'todo', component: TodoComponent},
   {path: 'weekTodo', component: WeekTodoComponent},
   {path: 'cv', component: CvPage},
+  {path: 'login', component: Login},
   {path: 'cv/:id', component: DetailsCvComponent},
   {path: 'hello/:name', component: Second},
   {path: '**', component: Nf404},
