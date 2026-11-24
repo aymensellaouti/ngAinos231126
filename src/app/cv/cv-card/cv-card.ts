@@ -3,9 +3,10 @@ import { Cv } from '../model/cv';
 import { DefaultImagePipe } from '../pipes/default-image-pipe';
 import { ToastrService } from 'ngx-toastr';
 import { EmbaucheService } from '../services/embauche.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [DefaultImagePipe],
+  imports: [DefaultImagePipe, RouterLink],
   selector: 'app-cv-card',
   styleUrl: './cv-card.css',
   templateUrl: './cv-card.html',

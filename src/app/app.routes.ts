@@ -5,6 +5,8 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { CvPage } from './cv/cv-page/cv-page';
 import { Second } from './components/second/second';
+import { Nf404 } from './components/nf404/nf404';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 
 export const routes: Routes = [
   {path: '', component: First},
@@ -12,5 +14,7 @@ export const routes: Routes = [
   {path: 'todo', component: TodoComponent},
   {path: 'weekTodo', component: WeekTodoComponent},
   {path: 'cv', component: CvPage},
+  {path: 'cv/:id', component: DetailsCvComponent},
   {path: 'hello/:name', component: Second},
+  {path: '**', component: Nf404},
 ];
