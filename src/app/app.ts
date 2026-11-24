@@ -8,10 +8,11 @@ import { Pere } from './interactionInterComposants/pere/pere';
 import { CvPage } from './cv/cv-page/cv-page';
 import { NgStyleExample } from './directives/ng-style-example/ng-style-example';
 import { NgClassExample } from './directives/ng-class-example/ng-class-example';
+import { TodoComponent } from './todo/todo/todo.component';
 
 @Component({
   // Tout ce dont j'ai besoin dans la vue
-  imports: [First, Second, Color, Som, TtcComponent, Pere, CvPage, NgStyleExample, NgClassExample],
+  imports: [First, Second, Color, Som, TtcComponent, Pere, CvPage, NgStyleExample, NgClassExample, TodoComponent],
   // Comment appeler mon composant
   selector: 'app-root',
   // mon css
